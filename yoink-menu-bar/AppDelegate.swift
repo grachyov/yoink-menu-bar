@@ -6,7 +6,8 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        StatusBarItem.shared.show()
+        StatusBarItem.shared.showButton()
+        StatusBarItem.shared.showPopover()
     }
         
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -14,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        // TODO: show something
+        StatusBarItem.shared.showPopover()
         return true
     }
     

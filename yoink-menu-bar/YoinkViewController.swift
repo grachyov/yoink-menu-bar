@@ -9,6 +9,7 @@ class YoinkViewController: NSViewController {
     @IBOutlet weak var moreButton: NSButton!
     @IBOutlet weak var containerView: NSView!
     
+    weak var containingPopover: NSPopover?
     private weak var webView: WKWebView?
     
     private let webViewConfiguration: WKWebViewConfiguration = {
@@ -41,7 +42,7 @@ class YoinkViewController: NSViewController {
     }
     
     @IBAction func doneButtonClicked(_ sender: Any) {
-        
+        containingPopover?.performClose(nil)
     }
     
     @IBAction func moreButtonClicked(_ sender: Any) {
