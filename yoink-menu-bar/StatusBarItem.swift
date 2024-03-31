@@ -23,7 +23,7 @@ class StatusBarItem: NSObject, NSPopoverDelegate {
     
     private func setupPopover() {
         popover.behavior = .transient
-        popover.contentSize = NSSize(width: 230, height: 230)
+        popover.contentSize = NSSize(width: 230, height: 320)
         popover.contentViewController = instantiate(YoinkViewController.self)
         popover.delegate = self
     }
