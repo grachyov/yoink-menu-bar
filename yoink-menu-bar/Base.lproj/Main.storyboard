@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="22689"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -690,13 +689,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="316" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4aG-Wj-j78">
-                                <rect key="frame" x="0.0" y="0.0" width="316" height="300"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="SBR-P1-IPW">
+                                <rect key="frame" x="0.0" y="0.0" width="316" height="260"/>
+                            </customView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="J6H-HV-RGy">
                                 <rect key="frame" x="8" y="267" width="25" height="25"/>
                                 <buttonCell key="cell" type="inline" bezelStyle="inline" image="xmark.circle" catalog="system" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Vo-0a-Axf">
@@ -714,16 +709,16 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="J6H-HV-RGy" firstAttribute="top" secondItem="X0n-jc-7y5" secondAttribute="top" constant="8" id="6VJ-4s-VD2"/>
-                            <constraint firstItem="4aG-Wj-j78" firstAttribute="top" secondItem="X0n-jc-7y5" secondAttribute="top" id="E0E-67-bui"/>
-                            <constraint firstItem="4aG-Wj-j78" firstAttribute="leading" secondItem="X0n-jc-7y5" secondAttribute="leading" id="Swf-yM-svE"/>
+                            <constraint firstItem="SBR-P1-IPW" firstAttribute="top" secondItem="X0n-jc-7y5" secondAttribute="top" constant="40" id="ATK-0i-Dz6"/>
                             <constraint firstItem="J6H-HV-RGy" firstAttribute="leading" secondItem="X0n-jc-7y5" secondAttribute="leading" constant="8" id="bd5-35-eyb"/>
-                            <constraint firstAttribute="trailing" secondItem="4aG-Wj-j78" secondAttribute="trailing" id="imw-QU-5bH"/>
-                            <constraint firstAttribute="bottom" secondItem="4aG-Wj-j78" secondAttribute="bottom" id="mN5-Pc-PP7"/>
+                            <constraint firstAttribute="trailing" secondItem="SBR-P1-IPW" secondAttribute="trailing" id="hPd-Gu-dRs"/>
+                            <constraint firstAttribute="bottom" secondItem="SBR-P1-IPW" secondAttribute="bottom" id="kVV-lt-HLB"/>
+                            <constraint firstItem="SBR-P1-IPW" firstAttribute="leading" secondItem="X0n-jc-7y5" secondAttribute="leading" id="raP-Na-1r2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="SBR-P1-IPW" id="yMt-H6-jHU"/>
                         <outlet property="quitButton" destination="J6H-HV-RGy" id="7xX-sJ-VWP"/>
-                        <outlet property="webView" destination="4aG-Wj-j78" id="sFj-K7-wuX"/>
                     </connections>
                 </viewController>
                 <customObject id="d26-uR-DNp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
