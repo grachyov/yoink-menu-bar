@@ -5,8 +5,9 @@ import WebKit
 
 class YoinkViewController: NSViewController {
     
+    @IBOutlet weak var resizeButton: NSButton!
+    @IBOutlet weak var moreButton: NSButton!
     @IBOutlet weak var containerView: NSView!
-    @IBOutlet weak var quitButton: NSButton!
     
     private weak var webView: WKWebView?
     
@@ -39,7 +40,19 @@ class YoinkViewController: NSViewController {
         self.webView = webView
     }
     
-    @IBAction func quitButtonClicked(_ sender: Any) {
+    @IBAction func doneButtonClicked(_ sender: Any) {
+        
+    }
+    
+    @IBAction func moreButtonClicked(_ sender: Any) {
+        
+    }
+    
+    @IBAction func resizeButtonClicked(_ sender: Any) {
+        
+    }
+    
+    private func quit() {
         NSApp.terminate(nil)
     }
     

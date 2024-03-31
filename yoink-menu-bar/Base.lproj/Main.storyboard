@@ -686,15 +686,15 @@
             <objects>
                 <viewController storyboardIdentifier="YoinkViewController" id="Wmb-nK-EBo" customClass="YoinkViewController" customModule="yoink_menu_bar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="X0n-jc-7y5">
-                        <rect key="frame" x="0.0" y="0.0" width="230" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="230" height="540"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="SBR-P1-IPW">
-                                <rect key="frame" x="0.0" y="0.0" width="230" height="460"/>
+                                <rect key="frame" x="0.0" y="44" width="230" height="456"/>
                             </customView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="J6H-HV-RGy">
-                                <rect key="frame" x="8" y="467" width="25" height="25"/>
-                                <buttonCell key="cell" type="inline" bezelStyle="inline" image="xmark.circle" catalog="system" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Vo-0a-Axf">
+                                <rect key="frame" x="197" y="507" width="25" height="25"/>
+                                <buttonCell key="cell" type="inline" bezelStyle="inline" image="arrow.up.left.and.down.right.and.arrow.up.right.and.down.left" catalog="system" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Vo-0a-Axf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystemBold"/>
                                 </buttonCell>
@@ -703,22 +703,54 @@
                                     <constraint firstAttribute="width" constant="25" id="TO5-LD-tSC"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="quitButtonClicked:" target="Wmb-nK-EBo" id="age-4I-wf1"/>
+                                    <action selector="resizeButtonClicked:" target="Wmb-nK-EBo" id="gLG-aa-DLp"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tBD-iR-HCQ">
+                                <rect key="frame" x="83" y="5" width="65" height="32"/>
+                                <buttonCell key="cell" type="push" title="done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Bk3-dJ-PKw">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="doneButtonClicked:" target="Wmb-nK-EBo" id="hnA-lP-4F1"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="HKO-t8-bE1">
+                                <rect key="frame" x="160" y="507" width="25" height="25"/>
+                                <buttonCell key="cell" type="inline" bezelStyle="inline" image="ellipsis" catalog="system" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wbR-e7-xK9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="11" name=".SFNS-Semibold"/>
+                                </buttonCell>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="JVW-zn-pCc"/>
+                                    <constraint firstAttribute="width" constant="25" id="bTK-Zt-hx7"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="moreButtonClicked:" target="Wmb-nK-EBo" id="faI-80-KR0"/>
                                 </connections>
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="J6H-HV-RGy" firstAttribute="leading" secondItem="HKO-t8-bE1" secondAttribute="trailing" constant="12" id="0Fi-yK-M4f"/>
                             <constraint firstItem="J6H-HV-RGy" firstAttribute="top" secondItem="X0n-jc-7y5" secondAttribute="top" constant="8" id="6VJ-4s-VD2"/>
                             <constraint firstItem="SBR-P1-IPW" firstAttribute="top" secondItem="X0n-jc-7y5" secondAttribute="top" constant="40" id="ATK-0i-Dz6"/>
-                            <constraint firstItem="J6H-HV-RGy" firstAttribute="leading" secondItem="X0n-jc-7y5" secondAttribute="leading" constant="8" id="bd5-35-eyb"/>
+                            <constraint firstAttribute="trailing" secondItem="J6H-HV-RGy" secondAttribute="trailing" constant="8" id="Bai-c7-HIK"/>
+                            <constraint firstAttribute="bottom" secondItem="tBD-iR-HCQ" secondAttribute="bottom" constant="12" id="aeS-ym-Y3n"/>
+                            <constraint firstItem="HKO-t8-bE1" firstAttribute="centerY" secondItem="J6H-HV-RGy" secondAttribute="centerY" id="cnW-n6-SGS"/>
+                            <constraint firstItem="tBD-iR-HCQ" firstAttribute="centerX" secondItem="X0n-jc-7y5" secondAttribute="centerX" id="gH5-Nb-odq"/>
                             <constraint firstAttribute="trailing" secondItem="SBR-P1-IPW" secondAttribute="trailing" id="hPd-Gu-dRs"/>
-                            <constraint firstAttribute="bottom" secondItem="SBR-P1-IPW" secondAttribute="bottom" id="kVV-lt-HLB"/>
+                            <constraint firstAttribute="bottom" secondItem="SBR-P1-IPW" secondAttribute="bottom" constant="44" id="kVV-lt-HLB"/>
                             <constraint firstItem="SBR-P1-IPW" firstAttribute="leading" secondItem="X0n-jc-7y5" secondAttribute="leading" id="raP-Na-1r2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="SBR-P1-IPW" id="yMt-H6-jHU"/>
-                        <outlet property="quitButton" destination="J6H-HV-RGy" id="7xX-sJ-VWP"/>
+                        <outlet property="moreButton" destination="HKO-t8-bE1" id="T8K-Z7-tl1"/>
+                        <outlet property="resizeButton" destination="J6H-HV-RGy" id="F8y-xR-x3P"/>
                     </connections>
                 </viewController>
                 <customObject id="d26-uR-DNp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -727,6 +759,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="xmark.circle" catalog="system" width="15" height="15"/>
+        <image name="arrow.up.left.and.down.right.and.arrow.up.right.and.down.left" catalog="system" width="16" height="15"/>
+        <image name="ellipsis" catalog="system" width="14" height="5"/>
     </resources>
 </document>

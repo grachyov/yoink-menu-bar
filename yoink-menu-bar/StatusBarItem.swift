@@ -9,6 +9,8 @@ class StatusBarItem: NSObject, NSPopoverDelegate {
     private override init() { super.init() }
     
     private var statusBarItem: NSStatusItem?
+    private var currentTimer: Timer?
+    
     private let popover = NSPopover()
     
     func show() {
@@ -23,7 +25,7 @@ class StatusBarItem: NSObject, NSPopoverDelegate {
     
     private func setupPopover() {
         popover.behavior = .transient
-        popover.contentSize = NSSize(width: 230, height: 500)
+        popover.contentSize = NSSize(width: 230, height: 540)
         popover.contentViewController = instantiate(YoinkViewController.self)
         popover.delegate = self
     }
@@ -40,13 +42,17 @@ class StatusBarItem: NSObject, NSPopoverDelegate {
     }
     
     func popoverDidClose(_ notification: Notification) {
+        currentTimer?.invalidate()
+        currentTimer = nil
+        
         popover.contentViewController = nil
         statusBarItem?.button?.image = Images.ok
-        Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(itsTime), userInfo: nil, repeats: false)
+        currentTimer = Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(itsTime), userInfo: nil, repeats: false)
     }
     
     @objc private func itsTime() {
         statusBarItem?.button?.image = Images.flag
+        currentTimer = nil
     }
     
 }
