@@ -16,29 +16,27 @@ class YoinkViewController: NSViewController {
         let preferences = WKWebpagePreferences()
         preferences.preferredContentMode = .desktop
         config.defaultWebpagePreferences = preferences
+        let zoomLevel = 0.69
+        let scriptSource = "document.body.style.zoom = '\(zoomLevel)';"
+        let userScript = WKUserScript(source: scriptSource, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        config.userContentController.addUserScript(userScript)
         return config
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let request = URLRequest(url: URL(string: "https://warpcast.com/~/channel/yoink")!)
+        let request = URLRequest(url: URL(string: "https://warpcast.com/horsefacts.eth/0x68f8d903")!)
         let webView = WKWebView(frame: .zero, configuration: webViewConfiguration)
         webView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(webView)
         NSLayoutConstraint.activate([
             webView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
             webView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            webView.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 4),
-            webView.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 4)
+            webView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
+            webView.heightAnchor.constraint(equalTo: containerView.heightAnchor)
         ])
         webView.load(request)
         self.webView = webView
-    }
-    
-    override func viewDidLayout() {
-        super.viewDidLayout()
-        let scaleTransform = CGAffineTransform(scaleX: 1 / 4, y: 1 / 4)
-        webView?.layer?.setAffineTransform(scaleTransform)
     }
     
     @IBAction func quitButtonClicked(_ sender: Any) {
