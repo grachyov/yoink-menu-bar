@@ -12,6 +12,8 @@
 		2C1464BD2BB9B4230051D4BE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2C1464BC2BB9B4230051D4BE /* Base */; };
 		2C1464C62BB9B5CB0051D4BE /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464C52BB9B5CB0051D4BE /* StatusBarItem.swift */; };
 		2C1464C82BB9B67D0051D4BE /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464C72BB9B67D0051D4BE /* Images.swift */; };
+		2C1464CC2BB9BB000051D4BE /* YoinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464CB2BB9BB000051D4BE /* YoinkViewController.swift */; };
+		2C1464CE2BB9BB2A0051D4BE /* NSStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464CD2BB9BB2A0051D4BE /* NSStoryboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		2C1464C42BB9B5610051D4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2C1464C52BB9B5CB0051D4BE /* StatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarItem.swift; sourceTree = "<group>"; };
 		2C1464C72BB9B67D0051D4BE /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		2C1464CB2BB9BB000051D4BE /* YoinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoinkViewController.swift; sourceTree = "<group>"; };
+		2C1464CD2BB9BB2A0051D4BE /* NSStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStoryboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 				2C1464C42BB9B5610051D4BE /* Info.plist */,
 				2C1464B52BB9B4220051D4BE /* AppDelegate.swift */,
 				2C1464C52BB9B5CB0051D4BE /* StatusBarItem.swift */,
+				2C1464CB2BB9BB000051D4BE /* YoinkViewController.swift */,
 				2C1464C72BB9B67D0051D4BE /* Images.swift */,
+				2C1464CD2BB9BB2A0051D4BE /* NSStoryboard.swift */,
 				2C1464B92BB9B4230051D4BE /* Assets.xcassets */,
 				2C1464BB2BB9B4230051D4BE /* Main.storyboard */,
 				2C1464BE2BB9B4230051D4BE /* yoink_menu_bar.entitlements */,
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1464CE2BB9BB2A0051D4BE /* NSStoryboard.swift in Sources */,
 				2C1464C62BB9B5CB0051D4BE /* StatusBarItem.swift in Sources */,
+				2C1464CC2BB9BB000051D4BE /* YoinkViewController.swift in Sources */,
 				2C1464C82BB9B67D0051D4BE /* Images.swift in Sources */,
 				2C1464B62BB9B4220051D4BE /* AppDelegate.swift in Sources */,
 			);

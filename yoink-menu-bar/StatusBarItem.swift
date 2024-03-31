@@ -1,13 +1,15 @@
 // ∅ yoink-menu-bar 2024
 
 import Cocoa
+import WebKit
 
-class StatusBarItem: NSObject {
+class StatusBarItem: NSObject, NSPopoverDelegate {
     
     static let shared = StatusBarItem()
     private override init() { super.init() }
     
     private var statusBarItem: NSStatusItem?
+    private let popover = NSPopover()
     
     func show() {
         let statusBar = NSStatusBar.system
@@ -16,47 +18,29 @@ class StatusBarItem: NSObject {
         statusBarItem?.button?.imagePosition = .imageOnly
         statusBarItem?.button?.imageScaling = .scaleProportionallyDown
         statusBarItem?.button?.target = self
-        statusBarItem?.button?.action = #selector(statusBarButtonClicked(sender:))
+        statusBarItem?.button?.action = #selector(statusBarButtonClicked)
     }
     
-    private func createMenu() -> NSMenu {
-        let menu = NSMenu(title: "yoink")
-        // TODO: add yoink frame
-        menu.delegate = self
-        let quitItem = NSMenuItem(title: "quit", action: #selector(warnBeforeQuitting), keyEquivalent: "q")
-        quitItem.target = self
-        menu.addItem(quitItem)
-        return menu
+    private func setupPopover() {
+        popover.behavior = .transient
+        popover.contentSize = NSSize(width: 230, height: 230)
+        popover.contentViewController = instantiate(YoinkViewController.self)
+        popover.delegate = self
     }
     
     @objc private func statusBarButtonClicked(sender: NSStatusBarButton) {
-        guard let event = NSApp.currentEvent, event.type == .rightMouseUp || event.type == .leftMouseUp else { return }
-        statusBarItem?.menu = createMenu()
-        statusBarItem?.button?.performClick(nil)
-    }
-    
-    @objc private func warnBeforeQuitting() {
-        let alert = NSAlert()
-        alert.messageText = "quit yoink?"
-        alert.alertStyle = .warning
-        alert.addButton(withTitle: "ok")
-        alert.addButton(withTitle: "cancel")
-        alert.buttons.last?.keyEquivalent = "\u{1b}"
-        let response = alert.runModal()
-        switch response {
-        case .alertFirstButtonReturn:
-            NSApp.terminate(nil)
-        default:
-            break
+        if popover.isShown {
+            popover.performClose(sender)
+        } else {
+            if let button = statusBarItem?.button {
+                setupPopover()
+                popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            }
         }
     }
     
-}
-
-extension StatusBarItem: NSMenuDelegate {
-    
-    func menuDidClose(_ menu: NSMenu) {
-        statusBarItem?.menu = nil
+    func popoverDidClose(_ notification: Notification) {
+        popover.contentViewController = nil
     }
     
 }
