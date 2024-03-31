@@ -8,18 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		2C1464B62BB9B4220051D4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464B52BB9B4220051D4BE /* AppDelegate.swift */; };
-		2C1464B82BB9B4220051D4BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464B72BB9B4220051D4BE /* ViewController.swift */; };
 		2C1464BA2BB9B4230051D4BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1464B92BB9B4230051D4BE /* Assets.xcassets */; };
 		2C1464BD2BB9B4230051D4BE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2C1464BC2BB9B4230051D4BE /* Base */; };
+		2C1464C62BB9B5CB0051D4BE /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464C52BB9B5CB0051D4BE /* StatusBarItem.swift */; };
+		2C1464C82BB9B67D0051D4BE /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464C72BB9B67D0051D4BE /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C1464B22BB9B4220051D4BE /* yoink-menu-bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yoink-menu-bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1464B52BB9B4220051D4BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C1464B72BB9B4220051D4BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2C1464B92BB9B4230051D4BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1464BC2BB9B4230051D4BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C1464BE2BB9B4230051D4BE /* yoink_menu_bar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = yoink_menu_bar.entitlements; sourceTree = "<group>"; };
+		2C1464C42BB9B5610051D4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2C1464C52BB9B5CB0051D4BE /* StatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarItem.swift; sourceTree = "<group>"; };
+		2C1464C72BB9B67D0051D4BE /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +55,10 @@
 		2C1464B42BB9B4220051D4BE /* yoink-menu-bar */ = {
 			isa = PBXGroup;
 			children = (
+				2C1464C42BB9B5610051D4BE /* Info.plist */,
 				2C1464B52BB9B4220051D4BE /* AppDelegate.swift */,
-				2C1464B72BB9B4220051D4BE /* ViewController.swift */,
+				2C1464C52BB9B5CB0051D4BE /* StatusBarItem.swift */,
+				2C1464C72BB9B67D0051D4BE /* Images.swift */,
 				2C1464B92BB9B4230051D4BE /* Assets.xcassets */,
 				2C1464BB2BB9B4230051D4BE /* Main.storyboard */,
 				2C1464BE2BB9B4230051D4BE /* yoink_menu_bar.entitlements */,
@@ -131,7 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C1464B82BB9B4220051D4BE /* ViewController.swift in Sources */,
+				2C1464C62BB9B5CB0051D4BE /* StatusBarItem.swift in Sources */,
+				2C1464C82BB9B67D0051D4BE /* Images.swift in Sources */,
 				2C1464B62BB9B4220051D4BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +286,9 @@
 				DEVELOPMENT_TEAM = 8DXC3N7E7P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "yoink-menu-bar/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = yoink;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -307,6 +316,9 @@
 				DEVELOPMENT_TEAM = 8DXC3N7E7P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "yoink-menu-bar/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = yoink;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;

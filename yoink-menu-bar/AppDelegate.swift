@@ -1,30 +1,21 @@
-//
-//  AppDelegate.swift
-//  yoink-menu-bar
-//
-//  Created by Ivan Grachev on 31/03/2024.
-//
+// ∅ yoink-menu-bar 2024
 
 import Cocoa
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
-
     
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        StatusBarItem.shared.show()
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return false
     }
-
-    func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
+    
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        // TODO: show something
         return true
     }
-
-
+    
 }
-
