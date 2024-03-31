@@ -4,7 +4,8 @@ import Cocoa
 
 struct Images {
     
-    static var icon: NSImage { systemName("flag") } // TODO: add custom icon
+    static var flag: NSImage { systemName("flag") }
+    static var ok: NSImage { systemName("hand.thumbsup") }
     
     private static func named(_ name: String) -> NSImage {
         return NSImage(named: name)!

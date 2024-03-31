@@ -14,7 +14,7 @@ class StatusBarItem: NSObject, NSPopoverDelegate {
     func show() {
         let statusBar = NSStatusBar.system
         statusBarItem = statusBar.statusItem(withLength: NSStatusItem.squareLength)
-        statusBarItem?.button?.image = Images.icon
+        statusBarItem?.button?.image = Images.flag
         statusBarItem?.button?.imagePosition = .imageOnly
         statusBarItem?.button?.imageScaling = .scaleProportionallyDown
         statusBarItem?.button?.target = self
@@ -41,6 +41,12 @@ class StatusBarItem: NSObject, NSPopoverDelegate {
     
     func popoverDidClose(_ notification: Notification) {
         popover.contentViewController = nil
+        statusBarItem?.button?.image = Images.ok
+        Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(itsTime), userInfo: nil, repeats: false)
+    }
+    
+    @objc private func itsTime() {
+        statusBarItem?.button?.image = Images.flag
     }
     
 }

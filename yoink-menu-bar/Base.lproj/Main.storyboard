@@ -686,14 +686,14 @@
             <objects>
                 <viewController storyboardIdentifier="YoinkViewController" id="Wmb-nK-EBo" customClass="YoinkViewController" customModule="yoink_menu_bar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="X0n-jc-7y5">
-                        <rect key="frame" x="0.0" y="0.0" width="230" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="230" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="SBR-P1-IPW">
-                                <rect key="frame" x="0.0" y="0.0" width="230" height="280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="230" height="460"/>
                             </customView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="J6H-HV-RGy">
-                                <rect key="frame" x="8" y="287" width="25" height="25"/>
+                                <rect key="frame" x="8" y="467" width="25" height="25"/>
                                 <buttonCell key="cell" type="inline" bezelStyle="inline" image="xmark.circle" catalog="system" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Vo-0a-Axf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystemBold"/>
