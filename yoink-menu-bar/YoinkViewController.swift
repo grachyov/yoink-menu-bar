@@ -29,7 +29,6 @@ class YoinkViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let request = URLRequest(url: URL(string: "https://warpcast.com/horsefacts.eth/0x68f8d903")!)
         let webView = WKWebView(frame: .zero, configuration: webViewConfiguration)
         webView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(webView)
@@ -39,8 +38,21 @@ class YoinkViewController: NSViewController {
             webView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
             webView.heightAnchor.constraint(equalTo: containerView.heightAnchor)
         ])
-        webView.load(request)
         self.webView = webView
+        goToYoink()
+        let menu = NSMenu(title: "")
+        let githubItem = NSMenuItem(title: "github", action: #selector(github), keyEquivalent: "")
+        let quitItem = NSMenuItem(title: "quit", action: #selector(quit), keyEquivalent: "q")
+        githubItem.target = self
+        quitItem.target = self
+        menu.addItem(githubItem)
+        menu.addItem(quitItem)
+        moreButton.menu = menu
+    }
+    
+    private func goToYoink() {
+        let request = URLRequest(url: URL(string: "https://warpcast.com/horsefacts.eth/0x68f8d903")!)
+        webView?.load(request)
     }
     
     @IBAction func doneButtonClicked(_ sender: Any) {
@@ -48,7 +60,7 @@ class YoinkViewController: NSViewController {
     }
     
     @IBAction func moreButtonClicked(_ sender: Any) {
-        
+        moreButton.menu?.popUp(positioning: nil, at: CGPoint(x: 23, y: 23), in: moreButton)
     }
     
     @IBAction func resizeButtonClicked(_ sender: Any) {
@@ -58,9 +70,16 @@ class YoinkViewController: NSViewController {
             containingPopover?.contentSize = NSSize(width: 1024, height: 800)
         }
         isIncreased.toggle()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(42)) { [weak self] in
+            self?.goToYoink()
+        }
     }
     
-    private func quit() {
+    @objc private func github() {
+        NSWorkspace.shared.open(URL(string: "https://github.com/grachyov/yoink-menu-bar")!)
+    }
+    
+    @objc private func quit() {
         NSApp.terminate(nil)
     }
     

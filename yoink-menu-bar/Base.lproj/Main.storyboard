@@ -730,7 +730,7 @@ DQ
                                     <constraint firstAttribute="width" constant="25" id="bTK-Zt-hx7"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="moreButtonClicked:" target="Wmb-nK-EBo" id="faI-80-KR0"/>
+                                    <action selector="moreButtonClicked:" target="Wmb-nK-EBo" id="mgU-0g-ihq"/>
                                 </connections>
                             </button>
                         </subviews>
