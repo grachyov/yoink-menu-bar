@@ -5,6 +5,8 @@ import WebKit
 
 class YoinkViewController: NSViewController {
     
+    private var isIncreased = false
+    
     @IBOutlet weak var resizeButton: NSButton!
     @IBOutlet weak var moreButton: NSButton!
     @IBOutlet weak var containerView: NSView!
@@ -50,7 +52,12 @@ class YoinkViewController: NSViewController {
     }
     
     @IBAction func resizeButtonClicked(_ sender: Any) {
-        
+        if isIncreased {
+            containingPopover?.contentSize = NSSize(width: 230, height: 540)
+        } else {
+            containingPopover?.contentSize = NSSize(width: 1024, height: 800)
+        }
+        isIncreased.toggle()
     }
     
     private func quit() {

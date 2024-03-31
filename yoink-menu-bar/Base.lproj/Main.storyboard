@@ -723,7 +723,7 @@ DQ
                                 <rect key="frame" x="160" y="507" width="25" height="25"/>
                                 <buttonCell key="cell" type="inline" bezelStyle="inline" image="ellipsis" catalog="system" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wbR-e7-xK9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="11" name=".SFNS-Semibold"/>
+                                    <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="JVW-zn-pCc"/>
