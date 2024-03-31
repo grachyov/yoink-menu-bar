@@ -8,16 +8,19 @@ class YoinkViewController: NSViewController {
     @IBOutlet weak var containerView: NSView!
     @IBOutlet weak var quitButton: NSButton!
     
-    private let sharedWebViewConfiguration: WKWebViewConfiguration = {
+    private let webViewConfiguration: WKWebViewConfiguration = {
         let config = WKWebViewConfiguration()
         config.websiteDataStore = .default()
+        let preferences = WKWebpagePreferences()
+        preferences.preferredContentMode = .desktop
+        config.defaultWebpagePreferences = preferences
         return config
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let request = URLRequest(url: URL(string: "https://warpcast.com/horsefacts.eth/0x68f8d903")!)
-        let webView = WKWebView(frame: .zero, configuration: sharedWebViewConfiguration)
+        let request = URLRequest(url: URL(string: "https://warpcast.com/~/channel/yoink")!)
+        let webView = WKWebView(frame: .zero, configuration: webViewConfiguration)
         webView.navigationDelegate = self
         webView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(webView)
