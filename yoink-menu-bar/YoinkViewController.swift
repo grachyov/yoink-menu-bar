@@ -8,6 +8,8 @@ class YoinkViewController: NSViewController {
     @IBOutlet weak var containerView: NSView!
     @IBOutlet weak var quitButton: NSButton!
     
+    private weak var webView: WKWebView?
+    
     private let webViewConfiguration: WKWebViewConfiguration = {
         let config = WKWebViewConfiguration()
         config.websiteDataStore = .default()
@@ -24,12 +26,19 @@ class YoinkViewController: NSViewController {
         webView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(webView)
         NSLayoutConstraint.activate([
-            webView.topAnchor.constraint(equalTo: containerView.topAnchor),
-            webView.leftAnchor.constraint(equalTo: containerView.leftAnchor),
             webView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            webView.rightAnchor.constraint(equalTo: containerView.rightAnchor)
+            webView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            webView.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 4),
+            webView.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 4)
         ])
         webView.load(request)
+        self.webView = webView
+    }
+    
+    override func viewDidLayout() {
+        super.viewDidLayout()
+        let scaleTransform = CGAffineTransform(scaleX: 1 / 4, y: 1 / 4)
+        webView?.layer?.setAffineTransform(scaleTransform)
     }
     
     @IBAction func quitButtonClicked(_ sender: Any) {
