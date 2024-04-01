@@ -41,10 +41,13 @@ class YoinkViewController: NSViewController {
         self.webView = webView
         goToYoink()
         let menu = NSMenu(title: "")
+        let reloadItem = NSMenuItem(title: "reload", action: #selector(reload), keyEquivalent: "")
         let githubItem = NSMenuItem(title: "github", action: #selector(github), keyEquivalent: "")
         let quitItem = NSMenuItem(title: "quit", action: #selector(quit), keyEquivalent: "q")
+        reloadItem.target = self
         githubItem.target = self
         quitItem.target = self
+        menu.addItem(reloadItem)
         menu.addItem(githubItem)
         menu.addItem(quitItem)
         moreButton.menu = menu
@@ -73,6 +76,10 @@ class YoinkViewController: NSViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(42)) { [weak self] in
             self?.goToYoink()
         }
+    }
+    
+    @objc private func reload() {
+        goToYoink()
     }
     
     @objc private func github() {
