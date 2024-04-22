@@ -689,9 +689,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="230" height="540"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="SBR-P1-IPW">
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8f1-V1-2cl">
                                 <rect key="frame" x="0.0" y="44" width="230" height="456"/>
-                            </customView>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="SBR-P1-IPW">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="456"/>
+                                    </customView>
+                                    <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aHh-oV-zDX">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="456"/>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SBR-P1-IPW" firstAttribute="width" secondItem="aHh-oV-zDX" secondAttribute="width" id="XUa-67-vLs"/>
+                                    <constraint firstItem="SBR-P1-IPW" firstAttribute="height" secondItem="aHh-oV-zDX" secondAttribute="height" id="weV-NI-hU8"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="J6H-HV-RGy">
                                 <rect key="frame" x="197" y="507" width="25" height="25"/>
                                 <buttonCell key="cell" type="inline" bezelStyle="inline" image="arrow.up.left.and.down.right.and.arrow.up.right.and.down.left" catalog="system" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Vo-0a-Axf">
@@ -737,18 +757,19 @@ DQ
                         <constraints>
                             <constraint firstItem="J6H-HV-RGy" firstAttribute="leading" secondItem="HKO-t8-bE1" secondAttribute="trailing" constant="12" id="0Fi-yK-M4f"/>
                             <constraint firstItem="J6H-HV-RGy" firstAttribute="top" secondItem="X0n-jc-7y5" secondAttribute="top" constant="8" id="6VJ-4s-VD2"/>
-                            <constraint firstItem="SBR-P1-IPW" firstAttribute="top" secondItem="X0n-jc-7y5" secondAttribute="top" constant="40" id="ATK-0i-Dz6"/>
                             <constraint firstAttribute="trailing" secondItem="J6H-HV-RGy" secondAttribute="trailing" constant="8" id="Bai-c7-HIK"/>
+                            <constraint firstItem="8f1-V1-2cl" firstAttribute="leading" secondItem="X0n-jc-7y5" secondAttribute="leading" id="P8g-oq-9I3"/>
                             <constraint firstAttribute="bottom" secondItem="tBD-iR-HCQ" secondAttribute="bottom" constant="12" id="aeS-ym-Y3n"/>
                             <constraint firstItem="HKO-t8-bE1" firstAttribute="centerY" secondItem="J6H-HV-RGy" secondAttribute="centerY" id="cnW-n6-SGS"/>
+                            <constraint firstAttribute="trailing" secondItem="8f1-V1-2cl" secondAttribute="trailing" id="dtc-nu-csC"/>
+                            <constraint firstAttribute="bottom" secondItem="8f1-V1-2cl" secondAttribute="bottom" constant="44" id="dxZ-ae-QJ2"/>
                             <constraint firstItem="tBD-iR-HCQ" firstAttribute="centerX" secondItem="X0n-jc-7y5" secondAttribute="centerX" id="gH5-Nb-odq"/>
-                            <constraint firstAttribute="trailing" secondItem="SBR-P1-IPW" secondAttribute="trailing" id="hPd-Gu-dRs"/>
-                            <constraint firstAttribute="bottom" secondItem="SBR-P1-IPW" secondAttribute="bottom" constant="44" id="kVV-lt-HLB"/>
-                            <constraint firstItem="SBR-P1-IPW" firstAttribute="leading" secondItem="X0n-jc-7y5" secondAttribute="leading" id="raP-Na-1r2"/>
+                            <constraint firstItem="8f1-V1-2cl" firstAttribute="top" secondItem="X0n-jc-7y5" secondAttribute="top" constant="40" id="lnk-nF-ivm"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="SBR-P1-IPW" id="yMt-H6-jHU"/>
+                        <outlet property="fluidContainerView" destination="aHh-oV-zDX" id="BMp-Gd-aWS"/>
                         <outlet property="moreButton" destination="HKO-t8-bE1" id="T8K-Z7-tl1"/>
                         <outlet property="resizeButton" destination="J6H-HV-RGy" id="F8y-xR-x3P"/>
                     </connections>

@@ -14,6 +14,7 @@
 		2C1464C82BB9B67D0051D4BE /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464C72BB9B67D0051D4BE /* Images.swift */; };
 		2C1464CC2BB9BB000051D4BE /* YoinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464CB2BB9BB000051D4BE /* YoinkViewController.swift */; };
 		2C1464CE2BB9BB2A0051D4BE /* NSStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464CD2BB9BB2A0051D4BE /* NSStoryboard.swift */; };
+		2C877D4C2BD6F61E0068DEDC /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C877D4B2BD6F61E0068DEDC /* Defaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		2C1464C72BB9B67D0051D4BE /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		2C1464CB2BB9BB000051D4BE /* YoinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoinkViewController.swift; sourceTree = "<group>"; };
 		2C1464CD2BB9BB2A0051D4BE /* NSStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStoryboard.swift; sourceTree = "<group>"; };
+		2C877D4B2BD6F61E0068DEDC /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				2C1464C52BB9B5CB0051D4BE /* StatusBarItem.swift */,
 				2C1464CB2BB9BB000051D4BE /* YoinkViewController.swift */,
 				2C1464C72BB9B67D0051D4BE /* Images.swift */,
+				2C877D4B2BD6F61E0068DEDC /* Defaults.swift */,
 				2C1464CD2BB9BB2A0051D4BE /* NSStoryboard.swift */,
 				2C1464B92BB9B4230051D4BE /* Assets.xcassets */,
 				2C1464BB2BB9B4230051D4BE /* Main.storyboard */,
@@ -145,6 +148,7 @@
 				2C1464CE2BB9BB2A0051D4BE /* NSStoryboard.swift in Sources */,
 				2C1464C62BB9B5CB0051D4BE /* StatusBarItem.swift in Sources */,
 				2C1464CC2BB9BB000051D4BE /* YoinkViewController.swift in Sources */,
+				2C877D4C2BD6F61E0068DEDC /* Defaults.swift in Sources */,
 				2C1464C82BB9B67D0051D4BE /* Images.swift in Sources */,
 				2C1464B62BB9B4220051D4BE /* AppDelegate.swift in Sources */,
 			);
