@@ -23,16 +23,23 @@ class StatusBarItem: NSObject, NSPopoverDelegate {
         statusBarItem?.button?.action = #selector(statusBarButtonClicked)
     }
     
-    func showPopover() {
+    func showPopover(onLaunch: Bool) {
         if let button = statusBarItem?.button {
             setupPopover()
-            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            if onLaunch {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(420)) { [weak self] in
+                    self?.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+                }
+            } else {
+                popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            }
+            
         }
     }
     
     private func setupPopover() {
         popover.behavior = .transient
-        popover.contentSize = NSSize(width: Defaults.hidesFluid ? 230 : 460, height: 567)
+        popover.contentSize = NSSize(width: Defaults.hidesFluid ? 230 : 460, height: 630)
         let viewController = instantiate(YoinkViewController.self)
         viewController.containingPopover = popover
         popover.contentViewController = viewController
@@ -43,7 +50,7 @@ class StatusBarItem: NSObject, NSPopoverDelegate {
         if popover.isShown {
             popover.performClose(sender)
         } else {
-            showPopover()
+            showPopover(onLaunch: false)
         }
     }
     

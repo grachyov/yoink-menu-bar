@@ -22,7 +22,7 @@ class YoinkViewController: NSViewController {
         let preferences = WKWebpagePreferences()
         preferences.preferredContentMode = .desktop
         config.defaultWebpagePreferences = preferences
-        let zoomLevel = 0.42
+        let zoomLevel = 0.6
         let scriptSource = "document.body.style.zoom = '\(zoomLevel)';"
         let userScript = WKUserScript(source: scriptSource, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
         config.userContentController.addUserScript(userScript)
@@ -60,6 +60,11 @@ class YoinkViewController: NSViewController {
         moreButton.menu = menu
         
         loadFluidYoinkIfNeeded()
+        
+        if !Defaults.didLaunchBefore {
+            Defaults.didLaunchBefore = true
+            toggleResize()
+        }
     }
     
     private func loadFluidYoinkIfNeeded() {
@@ -98,8 +103,12 @@ class YoinkViewController: NSViewController {
     }
     
     @IBAction func resizeButtonClicked(_ sender: Any) {
+        toggleResize()
+    }
+    
+    private func toggleResize() {
         if isIncreased {
-            containingPopover?.contentSize = NSSize(width: Defaults.hidesFluid ? 230 : 460, height: 567)
+            containingPopover?.contentSize = NSSize(width: Defaults.hidesFluid ? 230 : 460, height: 630)
             if !Defaults.hidesFluid {
                 fluidContainerView.isHidden = false
             }

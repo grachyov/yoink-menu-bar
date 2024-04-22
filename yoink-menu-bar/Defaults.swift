@@ -6,6 +6,15 @@ struct Defaults {
     
     private static let defaults = UserDefaults.standard
     
+    static var didLaunchBefore: Bool {
+        get {
+            defaults.bool(forKey: #function)
+        }
+        set {
+            defaults.setValue(newValue, forKey: #function)
+        }
+    }
+    
     static var hidesFluid: Bool {
         get {
             defaults.bool(forKey: #function)
