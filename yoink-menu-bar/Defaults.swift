@@ -15,13 +15,4 @@ struct Defaults {
         }
     }
     
-    static var hidesFluid: Bool {
-        get {
-            defaults.bool(forKey: #function)
-        }
-        set {
-            defaults.setValue(newValue, forKey: #function)
-        }
-    }
-    
 }
