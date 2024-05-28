@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0C470F2C0616CA00F684C2 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2C0C470E2C0616CA00F684C2 /* Sparkle */; };
 		2C1464B62BB9B4220051D4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1464B52BB9B4220051D4BE /* AppDelegate.swift */; };
 		2C1464BA2BB9B4230051D4BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1464B92BB9B4230051D4BE /* Assets.xcassets */; };
 		2C1464BD2BB9B4230051D4BE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2C1464BC2BB9B4230051D4BE /* Base */; };
@@ -36,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0C470F2C0616CA00F684C2 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,9 @@
 			dependencies = (
 			);
 			name = "yoink-menu-bar";
+			packageProductDependencies = (
+				2C0C470E2C0616CA00F684C2 /* Sparkle */,
+			);
 			productName = "yoink-menu-bar";
 			productReference = 2C1464B22BB9B4220051D4BE /* yoink-menu-bar.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 2C1464A92BB9B4220051D4BE;
+			packageReferences = (
+				2C0C470D2C0616CA00F684C2 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			productRefGroup = 2C1464B32BB9B4220051D4BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -370,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C0C470D2C0616CA00F684C2 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C0C470E2C0616CA00F684C2 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C0C470D2C0616CA00F684C2 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2C1464AA2BB9B4220051D4BE /* Project object */;
 }

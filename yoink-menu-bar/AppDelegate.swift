@@ -1,9 +1,16 @@
 // ∅ yoink-menu-bar 2024
 
 import Cocoa
+import Sparkle
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    let updaterController: SPUStandardUpdaterController
+    
+    override init() {
+        updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: nil, userDriverDelegate: nil)
+    }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         StatusBarItem.shared.showButton()
