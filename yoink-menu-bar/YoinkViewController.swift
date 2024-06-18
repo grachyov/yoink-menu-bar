@@ -7,11 +7,9 @@ class YoinkViewController: NSViewController {
     
     @IBOutlet weak var moreButton: NSButton!
     @IBOutlet weak var containerView: NSView!
-    @IBOutlet weak var fluidContainerView: NSView!
     
     weak var containingPopover: NSPopover?
     private weak var webView: WKWebView?
-    private weak var fluidWebView: WKWebView?
     
     private let webViewConfiguration: WKWebViewConfiguration = {
         let config = WKWebViewConfiguration()
@@ -52,44 +50,17 @@ class YoinkViewController: NSViewController {
         menu.addItem(githubItem)
         menu.addItem(quitItem)
         moreButton.menu = menu
-        
-        loadFluidYoinkIfNeeded()
-        
-        if !Defaults.didLaunchBefore {
-            Defaults.didLaunchBefore = true
-        }
-    }
-    
-    private func loadFluidYoinkIfNeeded() {
-        let webView = WKWebView(frame: .zero, configuration: webViewConfiguration)
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        fluidContainerView.addSubview(webView)
-        NSLayoutConstraint.activate([
-            webView.bottomAnchor.constraint(equalTo: fluidContainerView.bottomAnchor),
-            webView.leadingAnchor.constraint(equalTo: fluidContainerView.leadingAnchor),
-            webView.widthAnchor.constraint(equalTo: fluidContainerView.widthAnchor),
-            webView.heightAnchor.constraint(equalTo: fluidContainerView.heightAnchor)
-        ])
-        
-        self.fluidWebView = webView
-        goToFluidYoink()
-    }
-    
-    private func goToFluidYoink() {
-        let request = URLRequest(url: URL(string: "https://warpcast.com/vijay/0x2589bcca")!)
-        fluidWebView?.load(request)
     }
     
     private func goToYoink() {
-        let request = URLRequest(url: URL(string: "https://warpcast.com/horsefacts.eth/0x7ad8fc42")!)
+        let request = URLRequest(url: URL(string: "https://warpcast.com/horsefacts.eth/0x43925724")!)
         webView?.load(request)
     }
     
-    @IBAction func fluidButtonClicked(_ sender: Any) {
-        let wasFluid = containerView.isHidden
-        containerView.isHidden.toggle()
-        fluidContainerView.isHidden.toggle()
-        containingPopover?.contentSize = NSSize(width: 640, height: wasFluid ? 590 : 640)
+    @IBAction func toggleSizeButtonClicked(_ sender: Any) {
+        Defaults.isShrinked.toggle()
+        containingPopover?.contentSize = Defaults.preferredSize
+        goToYoink()
     }
     
     @IBAction func doneButtonClicked(_ sender: Any) {
@@ -102,7 +73,6 @@ class YoinkViewController: NSViewController {
     
     @objc private func reload() {
         goToYoink()
-        goToFluidYoink()
     }
     
     @objc private func github() {

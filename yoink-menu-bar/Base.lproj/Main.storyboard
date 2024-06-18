@@ -692,12 +692,9 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="SBR-P1-IPW">
                                 <rect key="frame" x="0.0" y="44" width="230" height="456"/>
                             </customView>
-                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aHh-oV-zDX">
-                                <rect key="frame" x="0.0" y="44" width="230" height="456"/>
-                            </customView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="J6H-HV-RGy">
                                 <rect key="frame" x="197" y="507" width="25" height="25"/>
-                                <buttonCell key="cell" type="inline" bezelStyle="inline" image="drop" catalog="system" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Vo-0a-Axf">
+                                <buttonCell key="cell" type="inline" bezelStyle="inline" image="arrow.up.left.and.down.right.and.arrow.up.right.and.down.left" catalog="system" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Vo-0a-Axf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystemBold"/>
                                 </buttonCell>
@@ -706,7 +703,7 @@
                                     <constraint firstAttribute="width" constant="25" id="TO5-LD-tSC"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="fluidButtonClicked:" target="Wmb-nK-EBo" id="9Qd-Se-js3"/>
+                                    <action selector="toggleSizeButtonClicked:" target="Wmb-nK-EBo" id="SCm-l8-xtk"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tBD-iR-HCQ">
@@ -748,16 +745,11 @@ DQ
                             <constraint firstAttribute="bottom" secondItem="tBD-iR-HCQ" secondAttribute="bottom" constant="12" id="aeS-ym-Y3n"/>
                             <constraint firstItem="HKO-t8-bE1" firstAttribute="centerY" secondItem="J6H-HV-RGy" secondAttribute="centerY" id="cnW-n6-SGS"/>
                             <constraint firstItem="tBD-iR-HCQ" firstAttribute="centerX" secondItem="X0n-jc-7y5" secondAttribute="centerX" id="gH5-Nb-odq"/>
-                            <constraint firstItem="aHh-oV-zDX" firstAttribute="width" secondItem="SBR-P1-IPW" secondAttribute="width" id="kQN-Ws-fFj"/>
-                            <constraint firstItem="aHh-oV-zDX" firstAttribute="centerY" secondItem="SBR-P1-IPW" secondAttribute="centerY" id="pse-uU-tem"/>
-                            <constraint firstItem="aHh-oV-zDX" firstAttribute="centerX" secondItem="SBR-P1-IPW" secondAttribute="centerX" id="rvd-Pa-2xl"/>
                             <constraint firstItem="SBR-P1-IPW" firstAttribute="top" secondItem="X0n-jc-7y5" secondAttribute="top" constant="40" id="uyZ-3e-JCP"/>
-                            <constraint firstItem="aHh-oV-zDX" firstAttribute="height" secondItem="SBR-P1-IPW" secondAttribute="height" id="wcB-eK-Ygq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="SBR-P1-IPW" id="yMt-H6-jHU"/>
-                        <outlet property="fluidContainerView" destination="aHh-oV-zDX" id="BMp-Gd-aWS"/>
                         <outlet property="moreButton" destination="HKO-t8-bE1" id="T8K-Z7-tl1"/>
                     </connections>
                 </viewController>
@@ -767,7 +759,7 @@ DQ
         </scene>
     </scenes>
     <resources>
-        <image name="drop" catalog="system" width="11" height="15"/>
+        <image name="arrow.up.left.and.down.right.and.arrow.up.right.and.down.left" catalog="system" width="16" height="15"/>
         <image name="ellipsis" catalog="system" width="14" height="5"/>
     </resources>
 </document>
